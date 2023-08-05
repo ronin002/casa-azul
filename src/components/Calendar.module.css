@@ -1,0 +1,20 @@
+.container {
+    background-color: gray;
+    padding: 15px;
+    border: 1px solid beige;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px ;
+    grid-template-rows:  50px 100px 100px 100px 100px 100px  ;
+}
+
+.containerCalendar{
+    /*background-color: #333;*/
+    padding: 5px;
+    border: 1px solid blue;
+}
+
+.containerCalendarWeekDays{
+    background-color: #454545;
+    /*padding: 5px;*/
+    border: 1px solid blue;
+}

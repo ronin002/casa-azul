@@ -1,0 +1,26 @@
+.DiaCalendar {
+    height: 100%;
+    width: 100%;
+    
+}
+
+.panelBody {
+    position: relative;
+    /*background-color: beige;*/
+
+}
+
+.progressNumber {
+    font-size: 40px;
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    
+    opacity: 0.15;            
+}
+
+.time {
+    opacity: 0.5;
+}
