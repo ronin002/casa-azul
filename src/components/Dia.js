@@ -9,12 +9,14 @@ function Dia({dia}) {
     //var b =JSON.stringify(dia.dia);
 
     var b =dia.dia;
-    var project = dia.Projeto;
-    console.log("DIA=>" + JSON.stringify(dia.Projeto));
-    console.log("project=>" + project);
+    var projects = [];
 
-    var cor = project.color;
-    console.log("cor=>" + cor);
+    projects =  dia.Projetos;
+    console.log("DIA=>" + JSON.stringify(dia.Projetos));
+    console.log("project=>" + projects);
+
+    //var cor = project.color;
+    //console.log("cor=>" + cor);
     let dataString = [];
 
     if (b){
@@ -31,7 +33,16 @@ function Dia({dia}) {
   return (
     <div className={styles.panelBody}>
          <span className={styles.progressNumber}>{dataString[2]}</span>
-         <div className={styles.time} style={{ backgroundColor: cor }}>{project.cliente}</div>
+         {
+            projects.map((item,index) =>
+            { 
+                return (
+                <div className={styles.time} style={{ backgroundColor: item.color }}>{item.cliente}</div>
+                )
+            }
+            )
+         }
+        
     </div>
   )
 }

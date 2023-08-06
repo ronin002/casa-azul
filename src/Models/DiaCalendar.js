@@ -2,8 +2,8 @@ import { Projeto } from "./Projeto";
 
 
 export class DiaCalendar {
-    constructor(Projeto, dia) {
-      this.Projeto = Projeto;
+    constructor(dia) {
+      this.Projetos = [];
       this.dia = dia;
     }
   }
