@@ -36,10 +36,16 @@ const Calendar = () => {
 
 
     let project = new Projeto("2023-08-01", "2023-08-10", "Edson", "Equipe João","#ff0047");
+    let project1 = new Projeto("2023-08-07", "2023-08-15", "Waleska", "Equipe Thaigo","#abff47");
+    let project2 = new Projeto("2023-08-13", "2023-08-20", "Josenilda", "Equipe 03","#008def");
+    let project3 = new Projeto("2023-08-13", "2023-08-31", " Guedes", "Equipe 04","#a98def");
 
     let projects = [];
     //project("2023-08-01", "2023-08-10", "Edson", "Equipe João");
     projects.push(project);
+    projects.push(project1);
+    projects.push(project2);
+    projects.push(project3);
 
     setProjetos(projects);
 
@@ -54,23 +60,32 @@ const Calendar = () => {
         let diaP = i;
         if (diaP <10) diaP = "0"+i;
         let dat = year + "-" + month + "-" + diaP;
-        console.log("DATA:" + dat);
+        
+
+        let listProject = [];
+
+
         for(let j = 0; j < projects.length; j++){
 
           let proj = projects[j];
 
           if (dat >= proj.startDate && dat<= proj.endDate){
-            let diaCal = new DiaCalendar(proj,dat);
-            elements.push(diaCal);   
+         
+            listProject.push(proj);
             bHasProject = true;
-            break;
           }
         }
-        
-        if (!bHasProject){
-          let diaCal = new DiaCalendar("",dat);
-          elements.push(diaCal);
-        } 
+
+      
+        let diaCal = new DiaCalendar(dat);
+
+        if (bHasProject)
+          diaCal.Projetos= listProject;
+        else
+          diaCal.Projetos = [];
+
+        elements.push(diaCal); 
+
         
         
 
